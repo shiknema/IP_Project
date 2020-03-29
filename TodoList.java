@@ -18,7 +18,7 @@ import java.util.*;
 
 public class TodoList
 {
-	
+	static Scanner console = new Scanner(System.in);
 	
 	static void welcomeMessage()
 	{
@@ -44,14 +44,13 @@ public class TodoList
         System.out.println("| 1.) Add New Task                      |");
         System.out.println("| 2.) Shorted Task By Project or Date   |");
         System.out.println("| 3.) Display Task List                 |");
-        System.out.println("| 4.) Show Menu Options                 |");
-        System.out.println("| 5.) Change Task Status                |");
-        System.out.println("| 6.) Exit and Save List!               |");
+        System.out.println("| 4.) Edit in Task                      |");
+        System.out.println("| 5.) Exit and Save List!               |");
         System.out.println("|                                       |");
         System.out.println("-----------------------------------------");
 	}
 
-	static Scanner console = new Scanner(System.in);
+	
 
 	public static void main(String args[])
 	{
@@ -62,6 +61,7 @@ public class TodoList
 		
 		// Call view_menu() method to display menu on screen
 				view_menu();
+	
 				
 				/**
 				 * Create a text file named SDA_ToDoList.txt in the specified location
@@ -73,15 +73,14 @@ public class TodoList
 			static void taskFileInput(String Task_Name , String Project_Name , String DueDate , String Status ) 
 				{
 
-				try {
-						// Creating an object of a file
-					File myToDoList = new File("./SDA_ToDoList.txt"); 
-					if (myToDoList.createNewFile())
-						{
-							System.out.println("File created: " + myToDoList.getName());
-						} else {
-							     System.out.println("File already exists.");
-							     try {
+					try {
+							// Creating an object of a file
+							File myToDoList = new File("./SDA_ToDoList.txt"); 
+							if (myToDoList.createNewFile()){
+									System.out.println("File created: " + myToDoList.getName());
+								} else {
+									System.out.println("File already exists.");
+										try {
 										FileWriter myWriter = new FileWriter("./SDA_ToDoList.txt");
 										 // Writes this content into the specified file
 										myWriter.write(Task_Name + "    " + Project_Name + "    " + DueDate + "   " + Status + "\n");
@@ -91,13 +90,18 @@ public class TodoList
 										myWriter.flush();
 										myWriter.close(); 
 										System.out.println("Successfully wrote to the file.");
-							          
-								
-						} catch (IOException e) {
-							System.out.println("An error occurred.");
-							e.printStackTrace();
-					}
+							     		}
+											catch (IOException e) {
+												System.out.println("An error occurred.");
+												e.printStackTrace();
+											}
+										}	
 				
+						}finally {
+									System. out. println( "finally Somthing Wrong!!") ;
+									}
+				}
+	
 				/* 
 				 * Write in to the file
 				 
@@ -119,7 +123,7 @@ public class TodoList
 					}
 				}
 				*/
-				
+						
 		Task taskList = new Task();
 		boolean programStart = true;
 		int userChoiceOption = 0;
@@ -169,19 +173,11 @@ public class TodoList
 				
 				case 4:
 				{
-					// Display menu on screen
+					// Edit in Task 
 					view_menu();
 					break;
 				}
 				case 5:
-				{
-					// change task status
-					
-					break;
-					
-					
-				}
-				case 6:
 				{
 					// call the quit() method with quit and save  the To Do List
 					//taskList.quit(task);
@@ -195,7 +191,8 @@ public class TodoList
 					break;
 				}
 			}
-		}
+		 
+	}
 	
 	/**
 	 * Clear the console before printing the options menu. For windows executes

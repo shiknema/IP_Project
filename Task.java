@@ -6,8 +6,8 @@ public class Task
 {
 	String taskName;
 	String projectName;
-	String status;
 	String Duedate;
+	String status;
 	
 
 	
@@ -27,7 +27,14 @@ public class Task
 	Scanner console = new Scanner(System.in);
 	
 	// Store task information in to Array List
-	 static ArrayList<Task> ToDoTaskTable = new ArrayList<Task>();
+	private static ArrayList<Task> ToDoTaskTable = new ArrayList<Task>();
+	 
+	public static ArrayList<Task>getToDoTaskTable(){
+		return ToDoTaskTable;
+	}
+	
+		
+		
 	
 	// Prints All the Task Information to the screen
 	void get_info(ArrayList<Task> ToDoTaskTable)
