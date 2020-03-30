@@ -47,7 +47,7 @@ public class Task
 			System.out.println("#"+ (j + 1) + ": " + taskInfo);
 			j++;
 		}
-	}
+	
 
 	
 	// Used to get the task name from the Task arraylist
@@ -77,7 +77,7 @@ public class Task
 		return status;
 	}
 
-
+	}
 
     // Used to add the New Task
 	void create_new(ArrayList<Task> task)
@@ -105,10 +105,7 @@ public class Task
 		}
     }
 
-	public int checkInt() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 }
     
 
