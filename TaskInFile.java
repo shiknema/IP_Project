@@ -1,8 +1,5 @@
 /**
  * Create a Text File to store all Task information for ToDoList.
- * 
- * 
- * @author shikhagupta
  *
  */
 // Import the File class
