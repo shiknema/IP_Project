@@ -1,12 +1,12 @@
 
-frontend/node_modules
+SDA_IP_Project/RemoteSystemsTempFiles/.project
 .DS_Store
 .classpath
 .project
 .settings/
 .package-lock.json
 .package.json
-SlackBackend/node_modules
+
 .metadata/
 RemoteSystemsTempFiles
 
